@@ -1,0 +1,9 @@
+node_modules/
+public/dist/bundle.js
+public/dist/bundle.js.map
+public/dist/styles.css
+public/dist/styles.css.map
+.env.local
+.env.developement
+.env.test
+yarn-error.log
