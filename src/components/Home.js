@@ -16,7 +16,9 @@ export default class Home extends Component {
     render() {
         return (
             <Container className="mt-5">
-                
+                <Container className="d-md-none">
+                    <SearchProduct />
+                </Container>
                 <HomeSlider />
                 <ProductsList category='electronics' />
                 
