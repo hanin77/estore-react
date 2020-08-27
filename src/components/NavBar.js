@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
-import {Navbar, Nav,InputGroup, Row, Button,NavDropdown} from 'react-bootstrap';
+import {Navbar, NavItem, Nav,InputGroup, Row, Button,NavDropdown} from 'react-bootstrap';
 import SearchProduct from './SearchProduct';
 import { tryToLogout } from '../actions/authentication';
 import { getCustomerCart } from '../actions/cart';
@@ -15,12 +15,14 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar className='fixed-top' bg="primary" expand="sm">
-                <Navbar.Brand className='text-light font-weight-bold' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
-                <SearchProduct className='ml-sm-auto' />
+                <Navbar.Brand className='text-light font-weight-bold ml-md-2 ml-sm-0 ml-lg-5' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
+                <NavItem className="ml-lg-5 ml-sm-1" style={{width: '50%'}}>
+                    <SearchProduct className="text-align-center" />
+                </NavItem>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className='ml-sm-auto'>
+                    <Nav className='ml-sm-1 ml-lg-2 mr-lg-4 mr-md-0'>
                         <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fa fa-user"/>  Login</span>:<span className="text-light font-weight-bold">Hellow {this.props.customer.username}</span> } id="basic-nav-dropdown">                           
                             {
                                 !this.props.customer.loggedIn && <Fragment>
