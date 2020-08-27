@@ -9,7 +9,7 @@ router.get('/cart/:id', (req,res) => {
   
     });
     if (!cart) return res.status(404).send('The cart with the given ID was not found.');
-      res.send(cartItems);
+    res.send(cartItems);
   });
   
   router.get('/', (req,res) => {

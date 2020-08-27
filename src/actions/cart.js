@@ -17,7 +17,7 @@ export const setCart = (mycart) =>({
 export const getCustomerCart = (id) => {
     return (dispatch) => { 
         if (id) {
-            return axios.get(`/api/user/cart/${id}`).then((resp) => {
+            return axios.get(`/api/users/cart/${id}`).then((resp) => {
             console.log('respond from express server', resp.data);
             dispatch(setCart([...resp.data]));
         }).catch((error)=> {
