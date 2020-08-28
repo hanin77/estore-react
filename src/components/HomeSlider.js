@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Carousel, Image,Row,Col} from 'react-bootstrap';
+import {Carousel, Button, Nav, Image,Row,Col} from 'react-bootstrap';
 export default class HomeSlider extends Component {
     state={
         index: 1
@@ -9,7 +9,7 @@ export default class HomeSlider extends Component {
     };
     render() {
         return (
-            <Row>
+            <Row>       
                 <Col className='self-justify-center' xs={12} md={8}>
                     <Carousel activeIndex={this.state.index} onSelect={this.handleSelect}>
                         <Carousel.Item>

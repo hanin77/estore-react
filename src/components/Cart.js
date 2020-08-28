@@ -16,7 +16,7 @@ class Cart extends Component {
     }
     render() {
         return (
-            <Container className="p-5" >
+            <Container className="p-2" >
                 {this.props.quantity<2?<h3 className='text-center'>Cart({this.props.quantity} Product)</h3>:<h3 className='text-center'>Cart({this.props.quantity} Products)</h3>}
                 <Container className="mx-0">
                     <Table responsive bordered hover className='text-center'>

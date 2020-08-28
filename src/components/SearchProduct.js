@@ -7,8 +7,8 @@ export default class SearchProduct extends Component {
     render() {
         return (
             <Form className="bg-primary" onSubmit = {this.onSubmitForm}>
-                    <InputGroup className='mb-1' style={{width: '100%'}}>
-                        <Form.Control style={{border: 'none'}} type="search" required placeholder="Product,Reference,..." />
+                    <InputGroup className="border border-primary mb-1 w-100" >
+                        <Form.Control type="search" required placeholder="Product,Reference,..." />
                         <InputGroup.Prepend>
                             <Button variant="outline-light"><i className='fa fa-search'></i></Button>
                         </InputGroup.Prepend>
