@@ -93,7 +93,7 @@ class Login extends Component {
                     </Row>
                 </Container>
                 <Container className="d-md-none">
-                    <Tabs defaultActiveKey="register" id="uncontrolled-tab-example">
+                    <Tabs defaultActiveKey="sign in" id="uncontrolled-tab-example">
                         <Tab eventKey="sign in" title="Sign in">
                             <Jumbotron className='bg-secondary' fluid>
                                     <h5 className='text-center'>RETURNING CUSTOMER</h5>
