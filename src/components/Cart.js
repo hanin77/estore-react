@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Table} from 'react-bootstrap';
-import {Container, Button, Image} from 'react-bootstrap';
+import {Container, Badge, Button, Image, Card} from 'react-bootstrap';
 import {getCustomerCart} from '../actions/cart';
-
 class Cart extends Component {
     handleContinueShoping = (e) => {
         e.preventDefault();
@@ -18,7 +17,7 @@ class Cart extends Component {
         return (
             <Container className="p-2" >
                 {this.props.quantity<2?<h3 className='text-center'>Cart({this.props.quantity} Product)</h3>:<h3 className='text-center'>Cart({this.props.quantity} Products)</h3>}
-                <Container className="mx-0">
+                <Container className="d-none d-md-block mx-0">
                     <Table responsive bordered hover className='text-center'>
                         <thead>
                             <tr className='lead align-middle'>
@@ -56,10 +55,60 @@ class Cart extends Component {
                     </Table>
                     
                 </Container>
+                    <Container className="d-md-none d-sm-block mx-0">
+                    {
+                        this.props.loggedIn && this.props.cart.map((product)=> 
+                        <Card key={product.id} className="mx-auto" style={{ width: '18rem' }} >
+                            <Card.Img variant="top" src={product.image} alt='product img'></Card.Img>
+                            <Card.Body className='ml-1'>
+                                <Card.Title>{product.price} $</Card.Title>
+                                <Card.Subtitle style={{  fontSize:'0.7em' }}>{product.title}</Card.Subtitle>
+                                
+                            </Card.Body>
+                            <Card.Footer className="mx-auto">
+                                <Button variant="outline-danger" className="mr-3">
+                                    <i className="fa fa-trash" /> Remove
+                                </Button>
+                                <Button variant="danger"  size="sm">
+                                    <i className="fa fa-minus" />
+                                </Button>
+                                <Badge variant="light">{product.quantity}</Badge>
+                                <Button variant="danger"  size="sm">
+                                    <i className="fa fa-plus" />
+                                </Button>
+                            </Card.Footer>
+                        </Card>
+                        )
+                    }
+                    {
+                        (!this.props.loggedIn && JSON.parse(localStorage.getItem('reduxState'))) && JSON.parse(localStorage.getItem('reduxState')).cart.map((product)=>
+                        <Card key={product.id} className="mx-auto" style={{ width: '18rem' }} >
+                            <Card.Img variant="top" src={product.image} alt='product img'></Card.Img>
+                            <Card.Body className='ml-1'>
+                                <Card.Title>{product.price} $</Card.Title>
+                                <Card.Subtitle style={{  fontSize:'0.7em' }}>{product.title}</Card.Subtitle>
+                                
+                            </Card.Body>
+                            <Card.Footer className="mx-auto">
+                                <Button variant="outline-danger" className="mr-3">
+                                    <i className="fa fa-trash" /> Remove
+                                </Button>
+                                <Button variant="danger"  size="sm">
+                                    <i className="fa fa-minus" />
+                                </Button>
+                                <Badge variant="light">{product.quantity}</Badge>
+                                <Button variant="danger"  size="sm">
+                                    <i className="fa fa-plus" />
+                                </Button>
+                            </Card.Footer>
+                        </Card>
+                        )
+                    }
+                    </Container>
                     <h3 className='text-right mr-3'>Total: {this.props.cart.reduce((total,product)=>total+product.price*product.quantity,0)}$</h3>
-                <Container className='text-right'>
-                    <Button className='ml-1 btn d-sm-block d-md-inline' variant="outline-warning" onClick={this.handleContinueShoping}>Continue shopping</Button>
-                    <Button className='ml-1 btn d-sm-block d-md-inline' variant="danger">Complete order</Button>
+                <Container className='text-right mb-2'>
+                    <Button className='ml-1 btn  d-md-inline' variant="outline-warning" onClick={this.handleContinueShoping}>Continue shopping</Button>
+                    <Button className='ml-1 btn  d-md-inline' variant="danger">Complete order</Button>
                 </Container>
                 
             </Container>
