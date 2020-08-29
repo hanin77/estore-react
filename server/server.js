@@ -3,7 +3,6 @@ const productsApi = require('./routes/products');
 const usersApi = require('./routes/users'); 
 const express = require('express');
 const { json } = require('express');
-const {products, users, carts} = require('./data');
 const app = express();
 const publicPath = path.join(__dirname,'..','public');
 app.use(express.static(publicPath));
