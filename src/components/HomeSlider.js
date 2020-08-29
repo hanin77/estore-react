@@ -49,7 +49,7 @@ export default class HomeSlider extends Component {
                         </Carousel.Item>
                     </Carousel>
                 </Col>
-                <Col xs={12} md={4}>
+                <Col className="d-none d-md-inline-block" xs={12} md={4}>
                     <Row className='mb-2'>
                         <Image fluid src="images\delivery-man-delivering-a-package.jpg" />
                         

@@ -28,8 +28,8 @@ class Login extends Component {
                     <Row >
                         <Col md={5}>
                             
-                            <Jumbotron className='bg-secondary' fluid>
-                                    <h5 className='text-center'>RETURNING CUSTOMER</h5>
+                            <Jumbotron className='bg-dark' fluid>
+                                    <h5 className='text-center text-light'>RETURNING CUSTOMER</h5>
                                     <Form onSubmit={this.handleLogin} className='text-center'>
                                         <InputGroup className='p-2'>
                                             <InputGroup.Prepend>
@@ -43,7 +43,7 @@ class Login extends Component {
                                             </InputGroup.Prepend>
                                             <Form.Control  name='userpsw' style={{border: 'none'}} type="password" required placeholder="Enter your password" />
                                         </InputGroup>
-                                        <Button variant="success" type="submit">Sign in</Button>
+                                        <Button variant="info" type="submit">Sign in</Button>
                                     </Form>
                                     
                             </Jumbotron>               
@@ -51,9 +51,9 @@ class Login extends Component {
                 
                         <Col md={7}>
 
-                            <Jumbotron className='bg-secondary' fluid>
-                                <h5 className='text-center'>CREATE AN ACCOUNT</h5>
-                                <p className='text-justify p-2'>Creating an account with us is quick and easy, and will allow you to simply access your details when you return to the site. You can add multiple delivery addresses, track your order and much more.</p>
+                            <Jumbotron className='bg-dark' fluid>
+                                <h5 className='text-center text-light'>CREATE AN ACCOUNT</h5>
+                                <p className='text- text-light p-2'>Creating an account with us is quick and easy, and will allow you to simply access your details when you return to the site. You can add multiple delivery addresses, track your order and much more.</p>
                                 <Form onSubmit={this.handleRegister} className='text-center'>
                                     <InputGroup className='p-2'>
                                         <InputGroup.Prepend>
@@ -83,7 +83,7 @@ class Login extends Component {
                                         </InputGroup.Prepend>
                                         <Form.Control  name='usertel' style={{border: 'none'}} type="tel" required placeholder="Enter your phone number" />
                                     </InputGroup>
-                                    <Button className='text-center' variant="success" type="submit">
+                                    <Button className='text-center' variant="warning" type="submit">
                                         Register
                                     </Button>
                                 </Form>
@@ -95,8 +95,8 @@ class Login extends Component {
                 <Container className="d-md-none">
                     <Tabs defaultActiveKey="sign in" id="uncontrolled-tab-example">
                         <Tab eventKey="sign in" title="Sign in">
-                            <Jumbotron className='bg-secondary' fluid>
-                                    <h5 className='text-center'>RETURNING CUSTOMER</h5>
+                            <Jumbotron className='bg-dark' fluid>
+                                    <h5 className='text-center text-light'>RETURNING CUSTOMER</h5>
                                     <Form onSubmit={this.handleLogin} className='text-center'>
                                         <InputGroup className='p-2'>
                                             <InputGroup.Prepend>
@@ -110,16 +110,16 @@ class Login extends Component {
                                             </InputGroup.Prepend>
                                             <Form.Control  name='userpsw' style={{border: 'none'}} type="password" required placeholder="Enter your password" />
                                         </InputGroup>
-                                        <Button variant="success" type="submit">Sign in</Button>
+                                        <Button variant="info" type="submit">Sign in</Button>
                                     </Form>
                                     
                             </Jumbotron>               
                         
                         </Tab>
                         <Tab eventKey="register" title="Register">
-                            <Jumbotron className='bg-secondary' fluid>
-                                <h5 className='text-center'>CREATE AN ACCOUNT</h5>
-                                <p className='text-justify p-2'>Creating an account with us is quick and easy, and will allow you to simply access your details when you return to the site. You can add multiple delivery addresses, track your order and much more.</p>
+                            <Jumbotron className='bg-dark' fluid>
+                                <h5 className='text-center text-light'>CREATE AN ACCOUNT</h5>
+                                <p className='text-justify text-light p-2'>Creating an account with us is quick and easy, and will allow you to simply access your details when you return to the site. You can add multiple delivery addresses, track your order and much more.</p>
                                 <Form onSubmit={this.handleRegister} className='text-center'>
                                     <InputGroup className='p-2'>
                                         <InputGroup.Prepend>
