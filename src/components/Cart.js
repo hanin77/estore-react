@@ -55,10 +55,10 @@ class Cart extends Component {
                     </Table>
                     
                 </Container>
-                    <Container className="d-md-none d-sm-block mx-0">
+                <Container className="d-md-none d-sm-block mx-0">
                     {
                         this.props.loggedIn && this.props.cart.map((product)=> 
-                        <Card key={product.id} className="mx-auto" style={{ width: '18rem' }} >
+                        <Card key={product.id} className="mx-auto mb-1" style={{ width: '18rem' }} >
                             <Card.Img variant="top" src={product.image} alt='product img'></Card.Img>
                             <Card.Body className='ml-1'>
                                 <Card.Title>{product.price} $</Card.Title>
@@ -82,7 +82,7 @@ class Cart extends Component {
                     }
                     {
                         (!this.props.loggedIn && JSON.parse(localStorage.getItem('reduxState'))) && JSON.parse(localStorage.getItem('reduxState')).cart.map((product)=>
-                        <Card key={product.id} className="mx-auto" style={{ width: '18rem' }} >
+                        <Card key={product.id} className="mx-auto mb-1" style={{ width: '18rem' }} >
                             <Card.Img variant="top" src={product.image} alt='product img'></Card.Img>
                             <Card.Body className='ml-1'>
                                 <Card.Title>{product.price} $</Card.Title>
