@@ -15,7 +15,7 @@ class NavBar extends Component {
     }
     render() {
         return (
-            <Navbar className='fixed-top' bg="primary" expand="sm">
+            <Navbar className='fixed-top' bg="primary shadow-lg" expand="sm">
                 <Navbar.Toggle className='mr-auto' aria-controls="basic-navbar-nav" />  
                 <Navbar.Brand className='text-light font-weight-bold ml-sm-1' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
                 <NavItem className="d-none d-md-inline-block ml-lg-5 ml-sm-1" style={{width: '50%'}}>
