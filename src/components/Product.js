@@ -13,7 +13,7 @@ class Product extends Component {
          
         return (
             <Col className='my-2'>
-                <Card id='productcard' className="mx-auto" style={{ width: '15rem', height:'30rem' }}>
+                <Card id='productcard' className="mx-auto shadow-lg" style={{ width: '15rem', height:'30rem' }}>
                     <Card.Img style={{ maxHeight:'21rem' }} variant="top" src={image} alt='product img'></Card.Img>
                     <Card.Body className='ml-1'>
                         <Card.Title>{price} $</Card.Title>

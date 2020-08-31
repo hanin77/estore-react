@@ -11,8 +11,8 @@ export default class HomeSlider extends Component {
     render() {
         return (
             <Row>
-                <Col className="d-none d-md-block bg-primary" md={3}>
-                    <Nav activeKey="/home" onSelect={selectedKey => alert(`selected ${selectedKey}`)} className="flex-column">
+                <Col className="d-none d-md-block bg-sidebarcolor rounded shadow-lg" md={3}>
+                    <Nav activeKey="/" onSelect={selectedKey => alert(`selected ${selectedKey}`)} className="flex-column">
                         <Sidebar  />
                     </Nav>
                     

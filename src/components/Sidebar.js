@@ -7,7 +7,7 @@ export default class Sidebar extends Component {
             <Fragment>
                 
                 <Nav.Item>
-                    <Nav.Link className="text-light" href="/home">Clothing and footwear</Nav.Link>
+                    <Nav.Link className="text-light" href="/">Clothing and footwear</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link className="text-light" eventKey="link-1">Phone & Tablet</Nav.Link>
