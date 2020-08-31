@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Carousel, Button, Nav, Image,Row,Col} from 'react-bootstrap';
+import Sidebar from './Sidebar';
 export default class HomeSlider extends Component {
     state={
         index: 1
@@ -9,8 +10,14 @@ export default class HomeSlider extends Component {
     };
     render() {
         return (
-            <Row>       
-                <Col className='self-justify-center' xs={12} md={8}>
+            <Row>
+                <Col className="d-none d-md-block bg-primary" md={3}>
+                    <Nav activeKey="/home" onSelect={selectedKey => alert(`selected ${selectedKey}`)} className="flex-column">
+                        <Sidebar  />
+                    </Nav>
+                    
+                </Col>       
+                <Col className='self-justify-center' xs={12} md={7}>
                     <Carousel activeIndex={this.state.index} onSelect={this.handleSelect}>
                         <Carousel.Item>
                             <Image
@@ -49,7 +56,7 @@ export default class HomeSlider extends Component {
                         </Carousel.Item>
                     </Carousel>
                 </Col>
-                <Col className="d-none d-md-inline-block" xs={12} md={4}>
+                <Col className="d-none d-md-inline-block" xs={12} md={2}>
                     <Row className='mb-2'>
                         <Image fluid src="images\delivery-man-delivering-a-package.jpg" />
                         

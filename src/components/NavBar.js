@@ -5,6 +5,7 @@ import {Navbar, NavItem, Nav,InputGroup, Row, Button,NavDropdown} from 'react-bo
 import SearchProduct from './SearchProduct';
 import { tryToLogout } from '../actions/authentication';
 import { getCustomerCart } from '../actions/cart';
+import Sidebar from './Sidebar';
 class NavBar extends Component {
 
     handleLogout = () => {
@@ -15,14 +16,14 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar className='fixed-top' bg="primary" expand="sm">
-                <Navbar.Brand className='text-light font-weight-bold ml-md-2 ml-sm-0 ml-lg-5' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
+                <Navbar.Toggle className='mr-auto' aria-controls="basic-navbar-nav" />  
+                <Navbar.Brand className='text-light font-weight-bold ml-sm-1' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
                 <NavItem className="d-none d-md-inline-block ml-lg-5 ml-sm-1" style={{width: '50%'}}>
                     <SearchProduct className="text-align-center" />
                 </NavItem>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />                
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className='ml-auto'>
-                        <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fa fa-user"/>  Login</span>:<span className="text-light font-weight-bold">Hellow {this.props.customer.username}</span> } id="basic-nav-dropdown">                           
+
+                <NavItem className='mx-auto'>
+                    <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fa fa-user"/>  <span className="d-none d-sm-inline-block">Login</span></span>:<span className="text-light font-weight-bold">Hi {this.props.customer.username}</span> } id="basic-nav-dropdown">                           
                             {
                                 !this.props.customer.loggedIn && <Fragment>
                                     <Button className='mx-2 d-block' variant="warning" as={NavLink} to="/login" >Login</Button> 
@@ -39,11 +40,26 @@ class NavBar extends Component {
                                 <NavDropdown.Divider />
                                 <Button className='mx-2 d-block' as={NavLink} to="/" variant="outline-warning" onClick={this.handleLogout} >Logout</Button>
                             </Fragment>}
-                        </NavDropdown>
-                        <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
-                        <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/> Cart</span></Nav.Link>
+                        </NavDropdown>      
+                </NavItem>
+                <NavItem className='mx-auto'>
+                    <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/>  <span className="d-none d-sm-inline-block">Cart</span></span></Nav.Link>
+                </NavItem>
+                <NavItem className="d-none d-sm-inline-block mx-auto">
+                    <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
+                </NavItem>
+
+                            
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className='mr-auto'>
+                        <NavItem className="d-sm-none">
+                            <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
+
+                            <Sidebar />
+                        </NavItem>
                     </Nav>
                 </Navbar.Collapse>
+                
                 {this.props.customer.loggingOut && <div className='loader text-center'>
                     <i id = "spin" className="fa fa-spinner fa-spin" aria-hidden="true"></i>
                 </div>
