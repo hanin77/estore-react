@@ -15,7 +15,7 @@ class NavBar extends Component {
     }
     render() {
         return (
-            <Navbar className='fixed-top' bg="primary shadow-lg" expand="sm">
+            <Navbar className='fixed-top shadow-lg' bg="primary" expand="md">
                 <Navbar.Toggle className='mr-auto' aria-controls="basic-navbar-nav" />  
                 <Navbar.Brand className='text-light font-weight-bold ml-sm-1' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
                 <NavItem className="d-none d-md-inline-block ml-lg-5 ml-sm-1" style={{width: '50%'}}>
@@ -45,14 +45,14 @@ class NavBar extends Component {
                 <NavItem className='mx-auto'>
                     <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/>  <span className="d-none d-sm-inline-block">Cart</span></span></Nav.Link>
                 </NavItem>
-                <NavItem className="d-none d-sm-inline-block mx-auto">
+                <NavItem className="d-none d-md-inline-block mx-auto">
                     <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
                 </NavItem>
 
                             
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className='mr-auto'>
-                        <NavItem className="d-sm-none">
+                        <NavItem className="d-md-none">
                             <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
 
                             <Sidebar />
