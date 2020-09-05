@@ -16,14 +16,14 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar className='fixed-top shadow-lg' bg="primary" expand="md">
-                <Navbar.Toggle className='mr-auto' aria-controls="basic-navbar-nav" />  
-                <Navbar.Brand className='text-light font-weight-bold ml-sm-1' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
-                <NavItem className="d-none d-md-inline-block ml-lg-5 ml-sm-1" style={{width: '50%'}}>
+                <Navbar.Toggle className='mr-1' aria-controls="basic-navbar-nav" />  
+                <Navbar.Brand className='text-light font-weight-bold ml-auto' as={NavLink} to="/"><i className="fa-cog fa fa-store md-xl" aria-hidden="true" /><span className="text-light font-weight-bold"> STORE</span></Navbar.Brand>
+                <NavItem className="d-none d-md-inline-block ml-lg-5 ml-sm-auto" style={{width: '50%'}}>
                     <SearchProduct className="text-align-center" />
                 </NavItem>
 
                 <NavItem className='mx-auto'>
-                    <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fa fa-user"/>  <span className="d-none d-sm-inline-block">Login</span></span>:<span className="text-light font-weight-bold">Hi {this.props.customer.username}</span> } id="basic-nav-dropdown">                           
+                    <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fas fa-user"/>  <span className="d-none d-sm-inline-block">Login</span></span>:<span className="text-light font-weight-bold"><i className="fa-cog fas fa-user-check"/></span> } id="basic-nav-dropdown">                           
                             {
                                 !this.props.customer.loggedIn && <Fragment>
                                     <Button className='mx-2 d-block' variant="danger" as={NavLink} to="/login" >Login</Button> 
@@ -40,7 +40,7 @@ class NavBar extends Component {
                                 <NavDropdown.Divider />
                                 <Button className='mx-2 d-block' as={NavLink} to="/" variant="outline-warning" onClick={this.handleLogout} >Logout</Button>
                             </Fragment>}
-                        </NavDropdown>      
+					</NavDropdown>      
                 </NavItem>
                 <NavItem className='mx-auto'>
                     <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/>  <span className="d-none d-sm-inline-block">Cart</span> <Badge pill variant="lightGreen">{this.props.quantity}</Badge></span></Nav.Link>
