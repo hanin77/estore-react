@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
-import {Navbar, NavItem, Nav,InputGroup, Row, Button,NavDropdown} from 'react-bootstrap';
+import {Navbar, NavItem, Nav, Badge, Row, Button,NavDropdown} from 'react-bootstrap';
 import SearchProduct from './SearchProduct';
 import { tryToLogout } from '../actions/authentication';
 import { getCustomerCart } from '../actions/cart';
@@ -26,7 +26,7 @@ class NavBar extends Component {
                     <NavDropdown className='text-light' title={!this.props.customer.loggedIn? <span className="text-light font-weight-bold"><i className="fa-cog fa fa-user"/>  <span className="d-none d-sm-inline-block">Login</span></span>:<span className="text-light font-weight-bold">Hi {this.props.customer.username}</span> } id="basic-nav-dropdown">                           
                             {
                                 !this.props.customer.loggedIn && <Fragment>
-                                    <Button className='mx-2 d-block' variant="warning" as={NavLink} to="/login" >Login</Button> 
+                                    <Button className='mx-2 d-block' variant="danger" as={NavLink} to="/login" >Login</Button> 
                                     <NavDropdown.Divider /> 
                                     <Button className='mx-2 d-block' variant="outline-warning" as={NavLink} to="/register">Register</Button> 
                                     <NavDropdown.Divider />
@@ -43,7 +43,7 @@ class NavBar extends Component {
                         </NavDropdown>      
                 </NavItem>
                 <NavItem className='mx-auto'>
-                    <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/>  <span className="d-none d-sm-inline-block">Cart</span></span></Nav.Link>
+                    <Nav.Link className='text-light'  as={NavLink} to="/cart"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-shopping-cart" aria-hidden="true"/>  <span className="d-none d-sm-inline-block">Cart</span> <Badge pill variant="lightGreen">{this.props.quantity}</Badge></span></Nav.Link>
                 </NavItem>
                 <NavItem className="d-none d-md-inline-block mx-auto">
                     <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
@@ -54,7 +54,7 @@ class NavBar extends Component {
                     <Nav className='mr-auto'>
                         <NavItem className="d-md-none">
                             <Nav.Link className='text-light'  as={NavLink} to="/about"><span className="text-light font-weight-bold"> <i className="fa-cog fa fa-question-circle" aria-hidden="true"/> Help</span></Nav.Link>
-
+                            
                             <Sidebar />
                         </NavItem>
                     </Nav>
@@ -70,6 +70,7 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    quantity:state.cart.reduce((total,product)=>total+=product.quantity,0),
     customer: state.authentication
 });
 

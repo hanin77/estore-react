@@ -10,10 +10,10 @@ export default class HomeSlider extends Component {
     };
     render() {
         return (
-            <Row>
+            <Row >
                 <Col className="d-none d-md-block bg-sidebarcolor rounded shadow-lg" md={3}>
                     <Nav activeKey="/" onSelect={selectedKey => alert(`selected ${selectedKey}`)} className="flex-column">
-                        <Sidebar  />
+                        <Sidebar />
                     </Nav>
                     
                 </Col>       

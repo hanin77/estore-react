@@ -7,28 +7,28 @@ export default class Sidebar extends Component {
             <Fragment>
                 
                 <Nav.Item>
-                    <Nav.Link className="text-light" href="/"><i className="fas fa-tshirt" aria-hidden="true" /> Clothing & footwear</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" href="/"><i className="fas fa-tshirt fa-fw" aria-hidden="true" /> Clothing</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="text-light" eventKey="link-1"><i className="fas fa-mobile-alt" aria-hidden="true" /> Phone & Tablet</Nav.Link>
+                <Nav.Link className="text-light sidebarr" eventKey="link-1"><i className="fas fa-mobile-alt fa-fw" aria-hidden="true" /> Phone & Tablet</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-heartbeat" /> Beauty & Health</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-heartbeat fa-fw" /> Beauty & Health</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-home" aria-hidden="true" /> Home & Kitchen</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-home fa-fw" aria-hidden="true" /> Home & Kitchen</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-apple-alt" /> Supemarket</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-apple-alt fa-fw" /> Supemarket</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-tv" aria-hidden="true" /> TV & Hi Tech</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-tv fa-fw" aria-hidden="true" /> TV & Hi Tech</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-gamepad" /> Baby & Toys</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-gamepad fa-fw" /> Baby & Toys</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="text-light" eventKey="link-2"><i className="fas fa-dumbbell" aria-hidden="true" /> Sport & Leisure</Nav.Link>
+                    <Nav.Link className="text-light sidebarr" eventKey="link-2"><i className="fas fa-dumbbell fa-fw" aria-hidden="true" /> Sport & Leisure</Nav.Link>
                 </Nav.Item>
             </Fragment>
 
